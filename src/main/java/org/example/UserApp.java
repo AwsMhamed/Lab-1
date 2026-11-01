@@ -9,7 +9,7 @@ import java.io.InputStream;
 public class UserApp {
     public static ArrayList<User> LoadUsers() {
         ArrayList<User> lst = new ArrayList<>();
-        InputStream input  = UserApp.class.getResourceAsStream(("/Users.txt"));
+        InputStream input = UserApp.class.getResourceAsStream(("/Users.txt"));
         if(input==null){
             throw new RuntimeException("Users.txt not found");
         }

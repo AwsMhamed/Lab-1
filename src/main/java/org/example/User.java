@@ -3,6 +3,8 @@ package  org.example;
 public class User {
     private String email;
     private String pass;
+    private int Try_Num=0 ;
+    private long blockedtime;
 
     public User(String email, String pass) {
         if (email.length() > 50) {  //check if the email is longer than 50 chars
@@ -94,5 +96,21 @@ public class User {
 
     public String getPass() {
         return this.pass;
+    }
+
+    public int getTry_Num() {
+        return Try_Num;
+    }
+
+    public void setTry_Num(int try_Num) {
+        Try_Num = try_Num;
+    }
+
+    public long getBlockedtime() {
+        return blockedtime;
+    }
+
+    public void setBlockedtime(long blockedtime) {
+        this.blockedtime = blockedtime;
     }
 }
