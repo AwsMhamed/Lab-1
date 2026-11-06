@@ -22,6 +22,9 @@ public class UserState {
     public synchronized void set_endTime(long new_endTime){
          this.endTime=new_endTime;
     }
+    public synchronized void incrementAttempt() {
+        attempt_counter++;
+    }
     public synchronized void checkBlockExpired() {
         if (endTime > 0 && System.currentTimeMillis() >= endTime) {
             attempt_counter = 0;

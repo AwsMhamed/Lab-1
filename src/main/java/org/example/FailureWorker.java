@@ -14,7 +14,7 @@ public class FailureWorker extends Thread {
 
                 FailedAttempt attempt =tracker.getFailureQueue().take();
                 UserState userState=tracker.get_UserState(attempt.getEmail());
-                userState.set_attempt_counter(userState.get_attempt_counter()+1);
+                userState.incrementAttempt();
 
                 if(userState.get_attempt_counter()>=tracker.n){
                     userState.set_endTime(System.currentTimeMillis()+tracker.t*1000L);
