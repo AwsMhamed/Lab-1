@@ -8,7 +8,7 @@ public class UserState {
 
     public UserState(){
         this.attempt_counter=0;
-        this.endTime=null;
+        this.endTime= 0L;
     }
     public synchronized int get_attempt_counter(){
         return this.attempt_counter;
@@ -22,5 +22,10 @@ public class UserState {
     public synchronized void set_endTime(long new_endTime){
          this.endTime=new_endTime;
     }
-
+    public synchronized void checkBlockExpired() {
+        if (endTime > 0 && System.currentTimeMillis() >= endTime) {
+            attempt_counter = 0;
+            endTime = 0L;
+        }
+    }
 }

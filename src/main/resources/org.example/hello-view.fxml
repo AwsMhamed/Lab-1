@@ -13,7 +13,7 @@
     </padding>
     <TextField fx:id="emailField" prefHeight="25.0" prefWidth="313.0" promptText="Enter your email" />
     <TextField fx:id ="passwordField" prefHeight="25.0" prefWidth="222.0" promptText="Enter your password" />
-    <Button mnemonicParsing="false" text="login" textFill="#ff00007a" onAction="#onLoginClick">
+    <Button fx:id="loginB" mnemonicParsing="false" text="login" textFill="#ff00007a" onAction="#onLoginClick">
         <font>
             <Font name="Arial" size="12.0" />
         </font>

@@ -17,7 +17,7 @@ public class AttemptTracker {
         this.n=n;
     }
 
-    public ConcurrentHashMap<String, UserState> getEmail_state() {
+    public ConcurrentHashMap<String, UserState> getEmail_states() {
         return email_states;
     }
     public UserState get_UserState(String email){

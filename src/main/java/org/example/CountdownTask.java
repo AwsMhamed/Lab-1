@@ -39,8 +39,14 @@ public class CountdownTask implements Runnable {
                     countdownLabel.setText(
                             "Blocked for " + seconds + " seconds"
                     )
-            );}
+            );
+
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                break;
+            }
+        }
     }
 }
-
-

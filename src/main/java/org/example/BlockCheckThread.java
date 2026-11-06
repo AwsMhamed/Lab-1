@@ -6,6 +6,7 @@ public class BlockCheckThread extends Thread {
     private AttemptTracker tracker;
     private String email;
     private boolean isBlocked;
+
     public BlockCheckThread(String email,AttemptTracker tracker){
         this.email=email;
         this.tracker=tracker;
@@ -18,6 +19,10 @@ public class BlockCheckThread extends Thread {
             isBlocked=false;
             return;
         }
+
+        UserState state = tracker.get_UserState(email);
+        state.checkBlockExpired();
+
         if(current_state.get_endTime()>System.currentTimeMillis()){
             isBlocked=true;
         }else {isBlocked=false;}
